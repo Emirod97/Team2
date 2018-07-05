@@ -1,9 +1,25 @@
 from flask import Blueprint, request, render_template
+import psycopg2
 
 accounts = Blueprint('accounts', __name__)
 
 @accounts.route('/', methods=['GET'])
 def sign_in():
+	conn = psycopg2.connect("dbname=gsl_twitter")
+	cur = conn.cursor()
+	print('PostgreSQL database version: ')
+	cur.execure('SELECT version()')
+	db_version = cur.fetchone()
+	print(db_version)
+
+	sql_add = ""
+		INSERT INTO accounts
+		VALUES('cjholz', 'cjholz@mit.edu', 'ricky'):
+		""
+
+	cur.execute(sql_add)
+	conn.commit()
+
 	return render_template('twitter/accounts/index.html')
 
 @accounts.route('/new/', methods=['POST'])
@@ -64,3 +80,4 @@ def unfollow_user(user_name, other_user):
 		# return {'error': 'something went wrong'}, 500
 	# return {'doc': 'user_name': user.name}, 200
 	return render_template('twitter/accounts/unfollow_user.html')
+
