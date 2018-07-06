@@ -52,7 +52,7 @@ def delete_user(user_name):
 	# except:
 		# return {'error': 'something went wrong'}, 500
 	# return {'doc': 'user_name': user.name}, 200
-	return return render_template('twitter/accounts/user_deleted.html')
+	return render_template('twitter/accounts/user_deleted.html')
 
 @accounts.route('/edit/<user_name>/<email>/<password>/', methods=['POST', 'GET'])
 def edit_user(user_name, email=None, password=None):
