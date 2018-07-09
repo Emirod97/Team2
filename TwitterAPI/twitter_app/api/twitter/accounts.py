@@ -1,11 +1,11 @@
 from flask import Blueprint, request, render_template
-import psycopg2
+#import psycopg2
 
 accounts = Blueprint('accounts', __name__)
 
 @accounts.route('/', methods=['GET'])
 def sign_in():
-	conn = psycopg2.connect("dbname=gsl_twitter")
+	"""conn = psycopg2.connect("dbname=gsl_twitter")
 	cur = conn.cursor()
 	print('PostgreSQL database version: ')
 	cur.execure('SELECT version()')
@@ -19,7 +19,7 @@ def sign_in():
 
 	cur.execute(sql_add)
 	conn.commit()
-
+"""
 	return render_template('twitter/accounts/index.html')
 
 @accounts.route('/new/', methods=['POST'])
