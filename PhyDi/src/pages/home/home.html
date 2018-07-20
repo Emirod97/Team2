@@ -8,11 +8,42 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-list inset>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <ion-list-header>
+          Your Books:
+        </ion-list-header>
+
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/img/thumbnail-totoro.png">
+            </ion-thumbnail>
+            <h2>Harry Potter and the Philosopher's Stone</h2>
+            <p>J. K. Rowling • 1997</p>
+            <button ion-button clear item-end>Read</button>
+        </ion-item>
+
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/img/thumbnail-fault_stars.png">
+            </ion-thumbnail>
+            <h2>The Fault in our Stars</h2>
+            <p>John Green • 2012</p>
+            <button ion-button clear item-end>Read</button>
+        </ion-item>
+
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/img/thumbnail-fifty_shades.png">
+            </ion-thumbnail>
+            <h2>Fifty Shades of Grey</h2>
+            <p>E. L. James • 2011</p>
+            <button ion-button clear item-end>Read</button>
+        </ion-item>
+
+
+  </ion-list>
+
+  <button ion-button outline>+Add More</button>
 </ion-content>
