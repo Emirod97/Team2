@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { NavController } from 'ionic-angular';
+/**import { AngularFireAuth } from 'angularfire2/auth';*/
 
 @Component({
   selector: 'page-home',
@@ -8,20 +8,21 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class HomePage {
 
-  constructor(private afAuth: AngularFireAuth, private toast: ToastController, public navCtrl: NavController) {
+  constructor( public navCtrl: NavController) {
 
   }
-
+/**
+ * private afAuth: AngularFireAuth,
   ionViewWillLoad(){
     this.afAuth.authState.subscribe(data => {
       if(data.email && data.uid){
-      this.toast.create({
-        message: `Welcome, ${data.email}`,
-        duration: 3000 
-      }).present();
+        this.toast.create({
+          message: `Welcome, ${data.email}`,
+          duration: 3000 
+        }).present();
     }
 
-    });
-  }
+    });  
+  } */
 
 }

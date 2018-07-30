@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { User } from '../../models/user';
 import { RegisterPage } from '../register/register';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -22,7 +22,7 @@ export class LoginPage {
 
   user = {} as User;
 
-  constructor(private afAuth: AngularFireAuth,
+  constructor(private afAuth: AngularFireAuth, private toast: ToastController,
     public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -38,6 +38,15 @@ export class LoginPage {
 
       if(result){
         this.navCtrl.setRoot(HomePage);
+        this.afAuth.authState.subscribe(data => {
+          if(data.email && data.uid){
+            this.toast.create({
+              message: `Welcome, ${data.email}`,
+              duration: 3000 
+            }).present();
+        }
+    
+        });  
       }
 
       }
