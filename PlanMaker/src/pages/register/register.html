@@ -7,13 +7,17 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Register</ion-title>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><div text-center>Register</div></ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
+<ion-content padding-horizontal>
+    <ion-list>
 
     <ion-item>
         <ion-label floating>Email Address</ion-label>
@@ -25,7 +29,10 @@
         <ion-input type="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
     
-      <button ion-button color="light" (click)="register(user)">Register</button>
-    
+    </ion-list>
+
+    <div text-center>
+      <button ion-button block outline (click)="register(user)">Register</button>
+    </div>
 
 </ion-content>
