@@ -4,6 +4,7 @@ import { User } from '../../models/user';
 import { RegisterPage } from '../register/register';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
+import { EventPage } from '../event/event';
 
 /**
  * import { AngularFireAuth } from "angularfire2/auth";
@@ -37,7 +38,7 @@ export class LoginPage {
       console.log(result);
 
       if(result){
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(EventPage);
         this.afAuth.authState.subscribe(data => {
           if(data.email && data.uid){
             this.toast.create({

@@ -14,6 +14,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from "angularfire2";
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireAuthModule } from "angularfire2/auth";
+import { EventPage } from '../pages/event/event';
+import { NewEventPage } from '../pages/new-event/new-event';
+import { DetailsPage } from '../pages/details/details';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     HomePage,
     ListPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    EventPage,
+    NewEventPage,
+    DetailsPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,10 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     HomePage,
     ListPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    EventPage,
+    NewEventPage,
+    DetailsPage
   ],
   providers: [
     StatusBar,
