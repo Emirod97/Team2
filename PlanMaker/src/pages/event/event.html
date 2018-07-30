@@ -18,4 +18,37 @@
 
 <ion-content padding>
 
+    <ion-card>
+        
+        <ion-item>
+          <ion-icon name="ionic" item-start large></ion-icon>
+          <h2>Event Name</h2>
+        </ion-item>
+
+        <ion-item>
+          <p>Created By: Username</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="time" theme="assertive" item-start large></ion-icon>
+            <h2>13:00 - 20:00</h2>
+        </ion-item>
+        
+        <ion-item>
+            <div text-center>
+                <button ion-button block clear icon-end (click)="details()">View Details
+                    <ion-icon  name="arrow-forward"></ion-icon>
+                </button>
+            </div>
+        </ion-item>
+
+        <!-- <img src="../../assets/imgs/logoplanner.png"> -->
+      
+      
+      </ion-card>
+
+      <ion-fab right bottom>
+          <button ion-fab color="primary" (click)="newEvent()"><ion-icon name="add"></ion-icon></button>
+      </ion-fab>
+
 </ion-content>
