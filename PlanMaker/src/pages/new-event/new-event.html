@@ -13,6 +13,24 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding-horizontal>
+
+    <ion-list>
+   <div text-center>
+        <ion-item>
+          <ion-input type="text" placeholder="Event name"></ion-input>
+        </ion-item>
+     
+        <ion-item>
+        <ion-textarea #myInput id="myInput" rows="1" (keyup)="resize()" maxLength="500" [(ngModel)]="myStuff" placeholder="Descripción..."></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Fecha y hora</ion-label>
+            <ion-datetime displayFormat="DD MMM, YYYY HH:mm" min="2018" max="2099" [(ngModel)]="myDate"></ion-datetime>
+          </ion-item>
+</div>
+      </ion-list>
+      
 
 </ion-content>
