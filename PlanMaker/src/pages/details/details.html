@@ -7,12 +7,76 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>details</ion-title>
-  </ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Event Details</ion-title>
+
+  <ion-buttons end>
+      <button ion-button icon-only (click)="showPrompt()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+
+</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-card>
+
+      <ion-card-header>
+          <h1>Event Name</h1>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-item>
+          <p>Description</p> 
+        </ion-item>
+        <br>  
+
+        <ion-item>
+            <p>Time:</p> 
+        </ion-item>
+        
+
+          <ion-card>
+              <ion-card-content no-padding>
+                
+               <img src="../../assets/imgs/descarga.jpg" alt="">
+                
+              </ion-card-content>
+          </ion-card>
+
+          <ion-item>
+              <p style="text-align:left;">
+                  Friend 1
+                  <span style="float:right;">Chips</span>
+              </p>       
+          </ion-item>
+
+          <br>
+
+          <ion-item>
+              <p style="text-align:left;">
+                  Friend 2
+                  <span style="float:right;">Beer</span>
+              </p>   
+          </ion-item>
+
+          <br>
+
+          <ion-item>
+              <p style="text-align:left;">
+                  Friend 3
+                  <span style="float:right;">Soda</span>
+              </p>   
+          </ion-item>   
+          
+      </ion-card-content>
+    
+    </ion-card>
 
 </ion-content>
