@@ -33,25 +33,48 @@
             <ion-card>
                 <ion-card-content no-padding>
                   
-                 <img src="../../assets/imgs/descarga.jpg" alt="">
+                 <img src="../../assets/imgs/map.PNG" alt="">
                   
                 </ion-card-content>
             </ion-card>
 
             <ion-searchbar (ionInput)="getItems($event)" placeholder="Look for friends"></ion-searchbar>
 
-            <ion-item>
-              <ion-label fixed >Friend 1</ion-label>
-              <ion-input type="text" value="" placeholder="Chips" text-right></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label fixed >Friend 2</ion-label>
-              <ion-input type="text" value="" placeholder="Beer" text-right></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label fixed >Friend 3</ion-label>
-              <ion-input type="text" value="" placeholder="Soda" text-right></ion-input>
-            </ion-item>
+            <ion-list>
+              <ion-item-sliding>
+                <ion-item>
+                    <ion-label fixed >Frank.ava@gmail.com</ion-label>
+                    <ion-input type="text" value="" placeholder="" text-right></ion-input>
+                </ion-item>
+                <ion-item-options slide="right">
+                  <button color="danger" ion-button>
+                    <ion-icon name="trash"></ion-icon>
+                  </button>
+                </ion-item-options>
+              </ion-item-sliding>
+              <ion-item-sliding>
+                <ion-item>
+                    <ion-label fixed >bryan.oro@gmail.com</ion-label>
+                  <ion-input type="text" value="" placeholder="" text-right></ion-input>
+                </ion-item>
+                <ion-item-options slide="right">
+                    <button color="danger" ion-button>
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  </ion-item-options>
+                </ion-item-sliding>
+                <ion-item-sliding>
+                <ion-item>
+                    <ion-label fixed >anna.pau@gmail.com</ion-label>
+                  <ion-input type="text" value="" placeholder="" text-right></ion-input>
+                </ion-item>
+                <ion-item-options slide="right">
+                    <button color="danger" ion-button>
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
             
             <div text-center>
               <button ion-button block outline (click)="create()">Create event</button>
@@ -63,3 +86,18 @@
     
   
 </ion-content>
+
+<!--
+  <ion-item>
+              <ion-label fixed >Friend 1</ion-label>
+              <ion-input type="text" value="" placeholder="Chips" text-right></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label fixed >Friend 2</ion-label>
+              <ion-input type="text" value="" placeholder="Beer" text-right></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label fixed >Friend 3</ion-label>
+              <ion-input type="text" value="" placeholder="Soda" text-right></ion-input>
+            </ion-item>
+-->

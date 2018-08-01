@@ -3,8 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 
@@ -18,11 +16,12 @@ import { EventPage } from '../pages/event/event';
 import { NewEventPage } from '../pages/new-event/new-event';
 import { DetailsPage } from '../pages/details/details';
 
+import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '@ionic-native/google-maps';
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage,
     LoginPage,
     RegisterPage,
     EventPage,
@@ -38,8 +37,6 @@ import { DetailsPage } from '../pages/details/details';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage,
     LoginPage,
     RegisterPage,
     EventPage,
@@ -49,6 +46,8 @@ import { DetailsPage } from '../pages/details/details';
   providers: [
     StatusBar,
     SplashScreen,
+    GoogleMaps,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
