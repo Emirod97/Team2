@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { DetailsPage } from '../details/details';
 import { NewEventPage } from '../new-event/new-event';
 
@@ -17,7 +17,8 @@ import { NewEventPage } from '../new-event/new-event';
 })
 export class EventPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -32,4 +33,34 @@ export class EventPage {
     this.navCtrl.push(NewEventPage);
   }
 
+  showPrompt() {
+    const prompt = this.alertCtrl.create({
+      title: 'Add Friends',
+      message: "Enter the Email of your Friend",
+      inputs: [
+        {
+          name: 'Email',
+          type:'email',
+          placeholder: 'Email'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Add',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
 }
+
+
