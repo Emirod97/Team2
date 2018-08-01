@@ -16,7 +16,7 @@
 <ion-content padding-horizontal>
 
     <ion-list>
-   <div text-center>
+    <div text-center>
         <ion-item>
           <ion-input type="text" placeholder="Event name"></ion-input>
         </ion-item>
@@ -28,9 +28,38 @@
         <ion-item>
             <ion-label>Fecha y hora</ion-label>
             <ion-datetime displayFormat="DD MMM, YYYY HH:mm" min="2018" max="2099" [(ngModel)]="myDate"></ion-datetime>
-          </ion-item>
-</div>
-      </ion-list>
-      
+        </ion-item>
 
+            <ion-card>
+                <ion-card-content no-padding>
+                  
+                 <img src="../../assets/imgs/descarga.jpg" alt="">
+                  
+                </ion-card-content>
+            </ion-card>
+
+            <ion-searchbar (ionInput)="getItems($event)" placeholder="Look for friends"></ion-searchbar>
+
+            <ion-item>
+              <ion-label fixed >Friend 1</ion-label>
+              <ion-input type="text" value="" placeholder="Chips" text-right></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label fixed >Friend 2</ion-label>
+              <ion-input type="text" value="" placeholder="Beer" text-right></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label fixed >Friend 3</ion-label>
+              <ion-input type="text" value="" placeholder="Soda" text-right></ion-input>
+            </ion-item>
+            
+            <div text-center>
+              <button ion-button block outline>Create event</button>
+            </div>
+
+    </div>   
+    </ion-list>
+
+    
+  
 </ion-content>
