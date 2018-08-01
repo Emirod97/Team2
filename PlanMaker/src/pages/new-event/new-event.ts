@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { EventPage } from '../event/event';
 
 /**
  * Generated class for the NewEventPage page.
@@ -17,7 +18,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewEventPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
   }
 
   @ViewChild('myInput') myInput: ElementRef;
@@ -31,6 +32,15 @@ export class NewEventPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewEventPage');
+  }
+
+  create(){
+    const loader = this.loadingCtrl.create({
+      content: "Creating event, Please wait...",
+      duration: 500
+    });
+    loader.present();
+    this.navCtrl.setRoot(EventPage);
   }
 
 }
